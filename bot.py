@@ -24,7 +24,11 @@ async def meow(message: types.Message):
         file = InputFile.from_url(url_meow, filename=url_meow[url_meow.index('/i/')+3:])
         await message.answer_photo(file)
     except:
-        pass
+        logging.error("ПИЗДЕЦ МЯВ НЕ РАБОТАЕТ")
 
 if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
+    try:
+        executor.start_polling(dp, skip_updates=True)
+    except:
+        logging.error("ПИЗДЕЦ ВСЕ НЕ РАБОТАЕТ В ДУРКУ")
+
